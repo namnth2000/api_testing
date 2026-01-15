@@ -1,3 +1,9 @@
+# Mục lục
+- [ĐỀ 1](#đề-1)
+- [ĐỀ 1](#đề-2)
+
+---
+
 # ĐỀ 1
 
 ### Câu 1
@@ -139,10 +145,14 @@ Chương trình in ra gì?
 6. Non-positive
 7. Mid
 
+[Về đầu trang](#mục-lục)
+
 ---
+
 <br>
 <br>
 <br>
+
 ---
 
 # ĐỀ 2
@@ -408,6 +418,8 @@ In ra gì?
 8. NO
 9. RUN
 10. COOL
+
+[Về đầu trang](#mục-lục)
 
 ---
 
