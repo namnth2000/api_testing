@@ -6,6 +6,8 @@
 
 # ĐỀ 1
 
+[Về đầu trang](#mục-lục)
+
 ### Câu 1
 
 ```c
@@ -156,6 +158,8 @@ Chương trình in ra gì?
 ---
 
 # ĐỀ 2
+
+[Về đầu trang](#mục-lục)
 
 ### Câu 1
 
