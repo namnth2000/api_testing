@@ -1,16 +1,15 @@
 ## Câu 1
 
 ```js
-let x = 1;
+let doorClosed = false;
 
-if (x > 0) {
-    console.log("POSITIVE");
+if (doorClosed) {
+    console.log("RUN");
 } else {
-    console.log("NEGATIVE");
+    console.warn("DOOR OPEN");
 }
 ```
 
-**Câu hỏi:**
 In ra gì?
 
 ---
@@ -18,34 +17,32 @@ In ra gì?
 ## Câu 2
 
 ```js
-let ready = false;
+let childLock = LOCK.ON;
 
-if (ready) {
-    console.log("READY");
+if (childLock === LOCK.ON) {
+    console.warn("LOCKED");
 } else {
-    console.warn("NOT READY");
+    console.log("UNLOCKED");
 }
 ```
 
-**Câu hỏi:**
-In ra gì? (log hay warn?)
+In ra gì?
 
 ---
 
 ## Câu 3
 
 ```js
-let power = POWER.OFF;
+let temperature = 220;
 
-if (power === POWER.ON) {
-    console.log("POWER ON");
+if (temperature > 200) {
+    console.error("OVERHEAT");
 } else {
-    console.error("NO POWER");
+    console.log("NORMAL");
 }
 ```
 
-**Câu hỏi:**
-In ra gì? (log hay error?)
+In ra gì?
 
 ---
 
@@ -53,16 +50,15 @@ In ra gì? (log hay error?)
 
 ```js
 let power = POWER.ON;
-let door = DOOR.CLOSED;
+let filterClean = false;
 
-if ((power === POWER.ON) && (door === DOOR.CLOSED)) {
-    console.log("START");
+if ((power === POWER.ON) && (filterClean === true)) {
+    console.log("COOLING");
 } else {
-    console.warn("BLOCK");
+    console.warn("CHECK FILTER");
 }
 ```
 
-**Câu hỏi:**
 In ra gì?
 
 ---
@@ -70,17 +66,16 @@ In ra gì?
 ## Câu 5
 
 ```js
-let power = POWER.OFF;
-let door = DOOR.OPEN;
+let childLock = LOCK.OFF;
+let doorClosed = true;
 
-if ((power === POWER.ON) || (door === DOOR.CLOSED)) {
-    console.log("ALLOW");
+if ((childLock === LOCK.OFF) && (doorClosed === true)) {
+    console.log("START WASH");
 } else {
-    console.warn("DENY");
+    console.warn("BLOCKED");
 }
 ```
 
-**Câu hỏi:**
 In ra gì?
 
 ---
@@ -88,43 +83,41 @@ In ra gì?
 ## Câu 6
 
 ```js
-let config = null;
+let recipe = null;
 
-if (config) {
-    console.log("HAS CONFIG");
+if (recipe !== null) {
+    console.log("START BAKE");
 } else {
-    console.warn("NO CONFIG");
+    console.warn("NO RECIPE");
 }
 ```
 
-**Câu hỏi:**
-In ra gì? Vì sao?
+In ra gì?
 
 ---
 
 ## Câu 7
 
 ```js
-function run() {
-    console.log("RUN");
+function shutdown() {
+    console.error("SHUTDOWN");
 }
 
-function stop() {
-    console.error("STOP");
+function cook() {
+    console.log("COOKING");
 }
 
-let sensor = true;
-let error = false;
+let temperature = 180;
+let overheat = false;
 
-if ((sensor === true) && (error === false)) {
-    run();
+if ((temperature > 200) || (overheat === true)) {
+    shutdown();
 } else {
-    stop();
+    cook();
 }
 ```
 
-**Câu hỏi:**
-Hàm nào được gọi và in ra gì?
+In ra gì?
 
 ---
 
@@ -132,17 +125,17 @@ Hàm nào được gọi và in ra gì?
 
 ```js
 let power = POWER.ON;
-let door = DOOR.OPEN;
-let mode = MODE.WASH;
+let mode = MODE.COOL;
+let windowOpen = true;
+let overheat = false;
 
-if ((power === POWER.ON) && ((door === DOOR.CLOSED) || (mode === MODE.WASH))) {
-    console.log("RUN");
+if ((power === POWER.ON) && ((mode === MODE.COOL) || (windowOpen === false)) && (overheat === false)) {
+    console.log("AC RUNNING");
 } else {
-    console.warn("BLOCK");
+    console.warn("AC STOP");
 }
 ```
 
-**Câu hỏi:**
 In ra gì?
 
 ---
@@ -150,30 +143,26 @@ In ra gì?
 ## Câu 9
 
 ```js
-function startWash() {
-    console.log("WASH");
+function bake() {
+    console.log("BAKING");
 }
 
-function idle() {
-    console.warn("IDLE");
+function blocked() {
+    console.warn("BLOCKED");
 }
 
 let power = POWER.ON;
-let mode = null;
+let mode = MODE.BAKE;
+let childLock = LOCK.ON;
 
-if (power === POWER.ON) {
-    if (mode === MODE.WASH) {
-        startWash();
-    } else {
-        idle();
-    }
+if ((power === POWER.ON) && (childLock === LOCK.OFF)) {
+    bake();
 } else {
-    console.error("NO POWER");
+    blocked();
 }
 ```
 
-**Câu hỏi:**
-Hàm nào được gọi và in ra gì?
+In ra gì?
 
 ---
 
@@ -193,13 +182,15 @@ function start() {
 }
 
 let power = POWER.ON;
-let door = DOOR.OPEN;
+let childLock = LOCK.OFF;
+let doorClosed = true;
+let temperature = 210;
+let overheat = temperature > 200;
 let mode = MODE.WASH;
-let error = null;
 
-if ((power !== POWER.ON) || (error === true)) {
+if ((power !== POWER.ON) || (overheat === true)) {
     alarm();
-} else if (door !== DOOR.CLOSED) {
+} else if ((childLock === LOCK.ON) || (doorClosed === false)) {
     wait();
 } else if (mode === MODE.WASH) {
     start();
@@ -208,20 +199,21 @@ if ((power !== POWER.ON) || (error === true)) {
 }
 ```
 
-**Câu hỏi:**
-Hàm nào được gọi và in ra gì?
+In ra gì?
 
 ---
 
-# ĐÁP ÁN
+## ĐÁP ÁN
 
-1. `POSITIVE`
-2. `NOT READY`
-3. `NO POWER`
-4. `START`
-5. `DENY`
-6. `NO CONFIG`
-7. `run()` → `RUN`
-8. `RUN`
-9. `idle()` → `IDLE`
-10. `wait()` → `WAIT`
+1. DOOR OPEN
+2. LOCKED
+3. OVERHEAT
+4. CHECK FILTER
+5. START WASH
+6. NO RECIPE
+7. COOKING
+8. AC RUNNING
+9. BLOCKED
+10. ALARM
+
+---
