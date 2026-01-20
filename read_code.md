@@ -1,429 +1,227 @@
-# Mục lục
-- [ĐỀ 1](#đề-1)
-- [ĐỀ 2](#đề-2)
+## Câu 1
 
----
+```js
+let x = 1;
 
-# ĐỀ 1
-
-[Về đầu trang](#mục-lục)
-
-### Câu 1
-
-```c
-int x = 5;
-
-if (x > 5) {
-    doTaskA();
+if (x > 0) {
+    console.log("POSITIVE");
 } else {
-    doTaskB();
+    console.log("NEGATIVE");
 }
 ```
 
 **Câu hỏi:**
-Hàm nào sẽ được thực hiện?
+In ra gì?
 
 ---
 
-### Câu 2
+## Câu 2
 
-```c
-int temp = 80;
+```js
+let ready = false;
 
-if (temp > 50) {
-    if (temp > 100) {
-        printf("High\n");
+if (ready) {
+    console.log("READY");
+} else {
+    console.warn("NOT READY");
+}
+```
+
+**Câu hỏi:**
+In ra gì? (log hay warn?)
+
+---
+
+## Câu 3
+
+```js
+let power = POWER.OFF;
+
+if (power === POWER.ON) {
+    console.log("POWER ON");
+} else {
+    console.error("NO POWER");
+}
+```
+
+**Câu hỏi:**
+In ra gì? (log hay error?)
+
+---
+
+## Câu 4
+
+```js
+let power = POWER.ON;
+let door = DOOR.CLOSED;
+
+if ((power === POWER.ON) && (door === DOOR.CLOSED)) {
+    console.log("START");
+} else {
+    console.warn("BLOCK");
+}
+```
+
+**Câu hỏi:**
+In ra gì?
+
+---
+
+## Câu 5
+
+```js
+let power = POWER.OFF;
+let door = DOOR.OPEN;
+
+if ((power === POWER.ON) || (door === DOOR.CLOSED)) {
+    console.log("ALLOW");
+} else {
+    console.warn("DENY");
+}
+```
+
+**Câu hỏi:**
+In ra gì?
+
+---
+
+## Câu 6
+
+```js
+let config = null;
+
+if (config) {
+    console.log("HAS CONFIG");
+} else {
+    console.warn("NO CONFIG");
+}
+```
+
+**Câu hỏi:**
+In ra gì? Vì sao?
+
+---
+
+## Câu 7
+
+```js
+function run() {
+    console.log("RUN");
+}
+
+function stop() {
+    console.error("STOP");
+}
+
+let sensor = true;
+let error = false;
+
+if ((sensor === true) && (error === false)) {
+    run();
+} else {
+    stop();
+}
+```
+
+**Câu hỏi:**
+Hàm nào được gọi và in ra gì?
+
+---
+
+## Câu 8
+
+```js
+let power = POWER.ON;
+let door = DOOR.OPEN;
+let mode = MODE.WASH;
+
+if ((power === POWER.ON) && ((door === DOOR.CLOSED) || (mode === MODE.WASH))) {
+    console.log("RUN");
+} else {
+    console.warn("BLOCK");
+}
+```
+
+**Câu hỏi:**
+In ra gì?
+
+---
+
+## Câu 9
+
+```js
+function startWash() {
+    console.log("WASH");
+}
+
+function idle() {
+    console.warn("IDLE");
+}
+
+let power = POWER.ON;
+let mode = null;
+
+if (power === POWER.ON) {
+    if (mode === MODE.WASH) {
+        startWash();
     } else {
-        printf("Normal\n");
+        idle();
     }
 } else {
-    printf("Low\n");
+    console.error("NO POWER");
 }
 ```
 
 **Câu hỏi:**
-Kết quả in ra là gì?
+Hàm nào được gọi và in ra gì?
 
 ---
 
-### Câu 3
+## Câu 10
 
-```c
-int door = 1;
-int power = 0;
-if (door == 1 && power == 1) {
-    printf("Start\n");
-} else if (door == 1) {
-    printf("No Power\n");
+```js
+function alarm() {
+    console.error("ALARM");
+}
+
+function wait() {
+    console.warn("WAIT");
+}
+
+function start() {
+    console.log("START");
+}
+
+let power = POWER.ON;
+let door = DOOR.OPEN;
+let mode = MODE.WASH;
+let error = null;
+
+if ((power !== POWER.ON) || (error === true)) {
+    alarm();
+} else if (door !== DOOR.CLOSED) {
+    wait();
+} else if (mode === MODE.WASH) {
+    start();
 } else {
-    printf("Door Open\n");
+    wait();
 }
 ```
 
 **Câu hỏi:**
-Kết quả in ra là gì?
-
----
-
-### Câu 4
-
-```cpp
-int a = 10;
-
-if (a > 5) {
-    if (a > 20)
-        cout << "Big\n";
-    else
-        cout << "Medium\n";
-} else {
-    cout << "Small\n";
-}
-```
-
-**Câu hỏi:**
-Kết quả in ra là gì?
-
----
-
-### Câu 5
-
-```cpp
-int level = 2;
-
-if (level == 1)
-    cout << "Low\n";
-else if (level == 2)
-    cout << "Mid\n";
-else
-    cout << "High\n";
-```
-
-**Câu hỏi:**
-Chương trình in ra gì?
-
----
-
-### Câu 6
-
-```python
-x = 1
-
-if x > 0:
-    print("Positive")
-else:
-    print("Non-positive")
-```
-
-**Câu hỏi:**
-Kết quả in ra là gì?
-
----
-
-### Câu 7
-
-```python
-x = 5
-
-if x > 10:
-    print("High")
-elif x > 3:
-    print("Mid")
-else:
-    print("Low")
-```
-
-**Câu hỏi:**
-Chương trình in ra gì?
+Hàm nào được gọi và in ra gì?
 
 ---
 
 # ĐÁP ÁN
 
-1. doTaskB
-2. Normal
-3. No Power
-4. Medium
-5. Mid
-6. Non-positive
-7. Mid
-
-[Về đầu trang](#mục-lục)
-
----
-
-<br>
-<br>
-<br>
-
----
-
-# ĐỀ 2
-
-[Về đầu trang](#mục-lục)
-
-### Câu 1
-
-```c
-#include <stdio.h>
-
-void A() { printf("A\n"); }
-void B() { printf("B\n"); }
-
-int main() {
-    int door = 0;
-    int power = 1;
-
-    if (door && power || power) {
-        A();
-    } else {
-        B();
-    }
-    return 0;
-}
-```
-
-**Câu hỏi:**
-Hàm nào được gọi?
-
----
-
-### Câu 2
-
-```c
-#include <stdio.h>
-
-int main() {
-    int temp = 95;
-    int fan = 1;
-
-    if (temp > 50) {
-        if (temp > 100 || fan == 0) {
-            printf("ALERT\n");
-        } else {
-            printf("RUN\n");
-        }
-    } else {
-        printf("STOP\n");
-    }
-    return 0;
-}
-```
-
-**Câu hỏi:**
-Kết quả in ra là gì?
-
----
-
-### Câu 3
-
-```c
-#include <stdio.h>
-
-int main() {
-    int a = 1;
-    int b = 0;
-    int c = 1;
-
-    if (a)
-        if (b || c)
-            printf("X\n");
-        else
-            printf("Y\n");
-    else
-        printf("Z\n");
-
-    return 0;
-}
-```
-
-**Câu hỏi:**
-Chương trình in ra gì?
-
----
-
-### Câu 4
-
-```c
-#include <stdio.h>
-
-int main() {
-    int door = 1;
-    int lock = 0;
-    int power = 1;
-
-    if (door && lock) {
-        printf("START\n");
-    } else if (door && power) {
-        printf("CHECK LOCK\n");
-    } else if (power) {
-        printf("OPEN DOOR\n");
-    } else {
-        printf("NO POWER\n");
-    }
-    return 0;
-}
-```
-
-**Câu hỏi:**
-In ra gì?
-
----
-
-### Câu 5
-
-```cpp
-#include <iostream>
-using namespace std;
-
-void start() { cout << "START\n"; }
-void stop()  { cout << "STOP\n"; }
-
-int main() {
-    int sensor = 1;
-    int error = 0;
-
-    if (sensor) {
-        if (error)
-            stop();
-        else
-            start();
-    } else {
-        stop();
-    }
-    return 0;
-}
-```
-
-**Câu hỏi:**
-Hàm nào được gọi?
-
----
-
-### Câu 6
-
-```cpp
-#include <iostream>
-using namespace std;
-
-int main() {
-    int a = 0;
-    int b = 1;
-    int c = 0;
-
-    if (a && b || c) {
-        cout << "TRUE\n";
-    } else {
-        cout << "FALSE\n";
-    }
-    return 0;
-}
-```
-
-**Câu hỏi:**
-In ra gì?
-
----
-
-### Câu 7
-
-```cpp
-#include <iostream>
-using namespace std;
-
-int main() {
-    int mode = 2;
-    int power = 0;
-
-    if (mode == 1 && power) {
-        cout << "MODE1\n";
-    } else if (mode == 2 || power) {
-        cout << "MODE2\n";
-    } else {
-        cout << "OFF\n";
-    }
-    return 0;
-}
-```
-
-**Câu hỏi:**
-Kết quả in ra là gì?
-
----
-
-### Câu 8
-
-```python
-a = False
-b = True
-c = False
-
-if a and b or c:
-    print("YES")
-else:
-    print("NO")
-```
-
-**Câu hỏi:**
-In ra gì?
-
----
-
-### Câu 9
-
-```python
-def run(door, power, error):
-    if door:
-        if power and not error:
-            print("RUN")
-        else:
-            print("WAIT")
-    else:
-        print("OPEN")
-
-run(True, True, False)
-```
-
-**Câu hỏi:**
-Kết quả in ra là gì?
-
----
-
-### Câu 10
-
-```python
-temp = 85
-fan = True
-alarm = False
-
-if temp > 90 or alarm:
-    print("ALERT")
-elif temp > 60 and fan:
-    print("COOL")
-elif temp > 60:
-    print("HOT")
-else:
-    print("OK")
-```
-
-**Câu hỏi:**
-In ra gì?
-
----
-
-# ĐÁP ÁN
-
-1. A
-2. RUN
-3. X
-4. CHECK LOCK
-5. start()
-6. FALSE
-7. MODE2
-8. NO
-9. RUN
-10. COOL
-
-[Về đầu trang](#mục-lục)
-
----
-
+1. `POSITIVE`
+2. `NOT READY`
+3. `NO POWER`
+4. `START`
+5. `DENY`
+6. `NO CONFIG`
+7. `run()` → `RUN`
+8. `RUN`
+9. `idle()` → `IDLE`
+10. `wait()` → `WAIT`
